@@ -14,28 +14,52 @@
  * @param  {string} input входная строка
  * @return {{min: number, max: number}} объект с минимумом и максимумом
  */
+// function getMinMax(str) {
+//     // let pattern = /\d+/g;
+//     var pattern=/\d+.\d+|\d |-\d+/g;
+//     arr1=str.match(pattern)
+//     console.log(arr1);
+//     var arr = str.split("," && " ");
+//     for (let i = 0; i < arr.length; i++) {
+//         arr[i] = parseFloat(arr[i]);
+//         if (Number.isNaN(arr[i])) arr[i] = null;
+//     }
+//     var min = 1000, max = -1000;
+//     for (let i = 0; i < arr.length; i++) {
+
+//         if (arr[i] != null) {
+//             console.log(arr[i]);
+//             if (arr[i] < min) min = arr[i];
+//             if (arr[i] > max) max = arr[i];
+//         }
+//     }
+
+//     return { min, max }
+
+// }
+
+// var str ="gh1 и 6.455, -2, но -8, а затем -15, то есть 2.7 и -1028";
+// console.log(getMinMax(str));
+
+//todo использовать  match min max деструктуризация.
+
 function getMinMax(str) {
-    var arr = str.split(",");
-    function num(a, b) {
-        return a - b;
-    }
-    console.log(arr);
-    console.log(arr.sort(num));
-    for (let i = 0; i < arr.length; i++) {
-        arr[i] = parseFloat(arr[i]);
-        if (Number.isNaN(arr[i])) arr[i] = null;
+    // let pattern = /\d+/g;
+    var pattern = /\d+.\d+|\d |-\d+/g;
+    arr1 = str.match(pattern)
+    console.log(arr1);
+    for (let i = 0; i < arr1.length; i++) {
+        arr1[i] = parseFloat(arr1[i]);
     }
     var min = 1000, max = -1000;
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] != null) {
-            if (arr[i] < min) min = arr[i];
-            if (arr[i] > max) max = arr[i];
-        }
+    for (let i = 0; i < arr1.length; i++) {
+        if (arr1[i] < min) min = arr1[i];
+        if (arr1[i] > max) max = arr1[i];
     }
 
     return { min, max }
-    
+
 }
 
-var str = prompt("Введите вашу строку", "1,2,3,-10,61,hello");
+var str = "gh1 и 6.455, -2, но -8, а затем -15, то есть 2.7 и -1028";
 console.log(getMinMax(str));
