@@ -54,14 +54,19 @@ function getMinMax(str) {
     }
     var min = 1000, max = -1000;
     for (let i = 0; i < arr1.length; i++) {
+        arr1[i].toLowerCase;
         if (arr1[i] < min) min = arr1[i];
         if (arr1[i] > max) max = arr1[i];
     }
-    
+    console.log(arr1);
+    for(let i=0;i<arr1.length;i++)
+    {
+        if(isNaN(arr1[i])) max=Infinity;
+    }
 
     return { min, max }
 
 }
 
-var str = "1.gh11.1 и 6.455,Infinity -2, но -8, а затем -15, то есть 2.7 и -1028";
+var str = "1.gh11.1 и 6.455,InfiniTy -2, но -8, а затем -15, то есть 2.7 и -1028";
 console.log(getMinMax(str));
