@@ -13,13 +13,27 @@
  * @return {string}
  */
 
+//ПЕРВЫЙ СПОСОБ ЧЕРЕЗ ОБЫЧНЫЙ ЦИКЛ.
 function capitalize(str) {
     var arr = str.split(" ");
+    console.log(arr);
     for (let i = 0; i < arr.length; i++) {
-        arr[i] = arr[i].charAt(0).toUpperCase()+arr[i].slice(1);
+        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
     }
-    var str1=arr.join(" ");
+    var str1 = arr.join(" ");
     console.log(str1);
 }
 var str = "данил привет как дела";
-console.log(capitalize(str));
+capitalize(str);
+
+
+
+
+//ВТОРОЙ СПОСОБ ЧЕРЕЗ МЕТОД "MAP".
+var str = "данил привет как дела";
+var arr = str.split(" ");
+console.log(arr);
+var str2 = arr.map(function (item) {
+    return (item.charAt(0).toUpperCase() + item.slice(1));
+});
+console.log(str2.join(" "));
