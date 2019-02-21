@@ -45,10 +45,11 @@
 
 function getMinMax(str) {
     // let pattern = /\d+/g;
-    var pattern = /\d+.\d+|\d |-\d+/g;
+    var pattern = /-\d+.\d+|\d+.\d+|-\d+|\d+|Infinity/gi;
     arr1 = str.match(pattern)
     console.log(arr1);
     for (let i = 0; i < arr1.length; i++) {
+        
         arr1[i] = parseFloat(arr1[i]);
     }
     var min = 1000, max = -1000;
@@ -56,10 +57,11 @@ function getMinMax(str) {
         if (arr1[i] < min) min = arr1[i];
         if (arr1[i] > max) max = arr1[i];
     }
+    
 
     return { min, max }
 
 }
 
-var str = "gh1 и 6.455, -2, но -8, а затем -15, то есть 2.7 и -1028";
+var str = "1.gh11.1 и 6.455,Infinity -2, но -8, а затем -15, то есть 2.7 и -1028";
 console.log(getMinMax(str));
