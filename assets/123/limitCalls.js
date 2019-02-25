@@ -19,5 +19,12 @@
  * @return {Function}
  */
 function limitCalls(fn, maxCalls) {
-    
+    for (let j = 0; j < maxCalls; j++) {
+        Cons();
+    }
 }
+function Cons() {
+    console.log(1)
+}
+var max = 4;
+console.log(limitCalls(Cons, max));
