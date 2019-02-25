@@ -19,4 +19,5 @@ function multiple(a, b) {
     }
     return a;
 }
-console.log(multiple(8,7));
+var one=5,two=3;
+console.log(multiple(one,two));
