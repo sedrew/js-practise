@@ -14,10 +14,12 @@
 
 function multiple(a, b) {
     var x=a;
-    for (let i = 1; i < b; i++) {
+    
+    for (let i = 1; i < Math.abs(b); i++) {
         a = a + x;
     }
+    if(b<0) return -a;
     return a;
 }
-var one=5,two=3;
+var one=5,two=-6;
 console.log(multiple(one,two));
