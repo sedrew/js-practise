@@ -27,14 +27,16 @@ function rle(str) {
         var n = str1.length;
         // console.log(arr[i], n);
         var arr2 = str1.split("")
-        // console.log(arr2);
-        arr3.push(arr2[0], n);
-        // console.log(arr3);
+        
+        if (n > 1) {
+          arr3.push(arr2[0], n);
+        //  console.log(arr3)
+        } else {arr3.push(arr2[0], "");
+        } 
     }
     var str2 = arr3.join("");
     // console.log(str2);
-    var str3 = str2.replace(/1/g, "");
-    console.log(str3);
+    console.log(str2);
 }
 
 var str = "AAAAAABBCQ";
